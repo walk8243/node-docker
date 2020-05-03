@@ -1,5 +1,7 @@
 FROM centos:centos8
 
+WORKDIR /usr/local/src/
+
 RUN dnf upgrade -y && \
 	dnf install which -y && \
 	dnf install python2 python3 gcc-c++ make -y
@@ -11,3 +13,5 @@ RUN curl https://nodejs.org/dist/v12.16.3/node-v12.16.3.tar.gz -o node-v12.16.3.
 	ln -s $(pwd)/node /usr/local/bin/node && \
 	node -v && \
 	cd ../ && rm node-v12.16.3.tar.gz
+
+WORKDIR /app
