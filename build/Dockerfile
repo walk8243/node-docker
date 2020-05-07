@@ -4,7 +4,7 @@ WORKDIR /usr/local/src/
 
 RUN dnf upgrade -y && \
 	dnf install which -y && \
-	dnf install python2 python3 gcc-c++ make -y
+	dnf install python2 gcc-c++ make -y
 
 RUN curl https://nodejs.org/dist/v12.16.3/node-v12.16.3.tar.gz -o node-v12.16.3.tar.gz && \
 	curl https://github.com/unicode-org/icu/releases/download/release-66-1/icu4c-66_1-src.tgz -o icu4c-66_1-src.tgz -L && \
